@@ -1,6 +1,6279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#03050a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>ZIONCORE SQIE v2.0</title>
+
+<style>
+/* =========================================================
+   ZIONCORE SQIE v2.0
+   SPIRITUAL-QUANTUM INTELLIGENCE & PROTECTIVE
+   RESILIENCE CORE
+   ========================================================= */
+
+:root{
+  --bg:#02050a;
+  --bg2:#050914;
+  --panel:#080d16;
+  --panel2:#0c1420;
+  --panel3:#101b29;
+  --line:#1d2c40;
+  --line2:#29415b;
+
+  --text:#edf5ff;
+  --muted:#7e91aa;
+
+  --cyan:#58e7ff;
+  --cyan2:#1aa6c4;
+
+  --gold:#e6c36a;
+  --gold2:#a9852c;
+
+  --green:#5ee6a5;
+  --red:#ff607a;
+  --violet:#a98aff;
+  --blue:#619aff;
+
+  --shadow:0 20px 70px rgba(0,0,0,.55);
+  --glow:0 0 30px rgba(88,231,255,.12);
+
+  --radius:13px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+  background:
+    radial-gradient(
+      circle at 20% -10%,
+      rgba(44,105,155,.25),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 20%,
+      rgba(100,70,170,.12),
+      transparent 28%
+    ),
+    var(--bg);
+
+  color:var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button{
+  color:var(--text);
+  background:
+    linear-gradient(
+      180deg,
+      #142233,
+      #0b131f
+    );
+
+  border:1px solid #2a4057;
+  border-radius:9px;
+  padding:9px 12px;
+
+  cursor:pointer;
+
+  transition:
+    .15s ease;
+}
+
+button:hover{
+  border-color:var(--cyan);
+  box-shadow:
+    0 0 20px rgba(88,231,255,.12);
+}
+
+button:active{
+  transform:translateY(1px);
+}
+
+button.primary{
+  background:
+    linear-gradient(
+      135deg,
+      #0d3340,
+      #0b1c29
+    );
+
+  border-color:#286b7d;
+}
+
+button.gold{
+  border-color:#80672b;
+  background:
+    linear-gradient(
+      135deg,
+      #27210f,
+      #151209
+    );
+}
+
+button.danger{
+  border-color:#6e2d3b;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+
+  color:var(--text);
+
+  background:#050a12;
+
+  border:1px solid #26384e;
+  border-radius:8px;
+
+  padding:9px 10px;
+
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--cyan);
+  box-shadow:
+    0 0 0 2px rgba(88,231,255,.07);
+}
+
+textarea{
+  resize:vertical;
+}
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+.app{
+  min-height:100vh;
+
+  display:grid;
+
+  grid-template-columns:
+    245px
+    minmax(0,1fr);
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar{
+  position:sticky;
+  top:0;
+
+  height:100vh;
+
+  padding:15px;
+
+  overflow:auto;
+
+  border-right:1px solid var(--line);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5,10,18,.98),
+      rgba(3,7,12,.96)
+    );
+
+  backdrop-filter:blur(20px);
+
+  z-index:10;
+}
+
+.brand{
+  padding:10px 8px 17px;
+
+  border-bottom:1px solid var(--line);
+}
+
+.brand-main{
+  font-size:18px;
+
+  font-weight:800;
+
+  letter-spacing:.16em;
+}
+
+.brand-sub{
+  margin-top:4px;
+
+  color:var(--cyan);
+
+  font-family:monospace;
+
+  font-size:10px;
+
+  letter-spacing:.16em;
+}
+
+.brand-status{
+  margin-top:10px;
+
+  font-size:10px;
+
+  color:var(--muted);
+}
+
+.status-dot{
+  display:inline-block;
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  box-shadow:
+    0 0 12px var(--green);
+
+  margin-right:5px;
+}
+
+.nav{
+  display:grid;
+
+  gap:5px;
+
+  margin-top:15px;
+}
+
+.nav button{
+  width:100%;
+
+  text-align:left;
+
+  background:transparent;
+
+  border-color:transparent;
+
+  color:#91a2b9;
+}
+
+.nav button.active{
+  color:#fff;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0e1d2d,
+      transparent
+    );
+
+  border-color:#263c54;
+}
+
+.nav-icon{
+  display:inline-block;
+
+  width:22px;
+
+  color:var(--cyan);
+}
+
+.sidebar-card{
+  margin-top:16px;
+
+  padding:11px;
+
+  border:1px solid var(--line);
+
+  border-radius:11px;
+
+  background:#080e17;
+}
+
+.sidebar-card h4{
+  margin:0 0 7px;
+
+  font-size:10px;
+
+  letter-spacing:.12em;
+
+  color:var(--muted);
+
+  text-transform:uppercase;
+}
+
+.sidebar-card div{
+  font-size:11px;
+
+  margin:4px 0;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.main{
+  min-width:0;
+
+  width:100%;
+
+  max-width:1900px;
+
+  margin:auto;
+
+  padding:15px;
+}
+
+/* =========================================================
+   TOP TELEMETRY
+   ========================================================= */
+
+.topbar{
+  display:grid;
+
+  grid-template-columns:
+    minmax(280px,2fr)
+    repeat(5,minmax(90px,1fr));
+
+  gap:8px;
+
+  margin-bottom:10px;
+}
+
+.identity{
+  min-width:0;
+
+  padding:13px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0b1420,
+      #070c14
+    );
+
+  box-shadow:var(--shadow);
+}
+
+.identity h1{
+  margin:0;
+
+  font-size:17px;
+
+  letter-spacing:.08em;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}
+
+.identity p{
+  margin:4px 0 0;
+
+  color:var(--muted);
+
+  font-size:10px;
+}
+
+.telemetry{
+  padding:11px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  background:#080e17;
+}
+
+.telemetry label{
+  display:block;
+
+  color:var(--muted);
+
+  font-size:9px;
+
+  letter-spacing:.13em;
+
+  text-transform:uppercase;
+}
+
+.telemetry strong{
+  display:block;
+
+  margin-top:4px;
+
+  font-size:16px;
+}
+
+.telemetry .ok{
+  color:var(--green);
+}
+
+/* =========================================================
+   VIEWS
+   ========================================================= */
+
+.view{
+  display:none;
+}
+
+.view.active{
+  display:block;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(12,minmax(0,1fr));
+
+  gap:9px;
+}
+
+.card{
+  min-width:0;
+
+  padding:12px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12,19,30,.98),
+      rgba(6,11,18,.98)
+    );
+
+  box-shadow:var(--shadow);
+
+  overflow:hidden;
+}
+
+.c12{grid-column:span 12}
+.c9{grid-column:span 9}
+.c8{grid-column:span 8}
+.c7{grid-column:span 7}
+.c6{grid-column:span 6}
+.c5{grid-column:span 5}
+.c4{grid-column:span 4}
+.c3{grid-column:span 3}
+
+.section-title{
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  gap:8px;
+
+  margin-bottom:9px;
+}
+
+.section-title h2{
+  margin:0;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+}
+
+.section-title span{
+  color:var(--cyan);
+
+  font-size:9px;
+
+  font-family:monospace;
+}
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.kpis{
+  display:grid;
+
+  grid-template-columns:
+    repeat(8,minmax(0,1fr));
+
+  gap:6px;
+}
+
+.kpi{
+  padding:8px;
+
+  min-width:0;
+
+  border:
+    1px solid #1b2a3d;
+
+  border-radius:8px;
+
+  background:#050a11;
+}
+
+.kpi label{
+  display:block;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  letter-spacing:.1em;
+
+  text-transform:uppercase;
+}
+
+.kpi strong{
+  display:block;
+
+  margin-top:3px;
+
+  font-size:16px;
+}
+
+.kpi small{
+  color:var(--muted);
+
+  font-size:8px;
+}
+
+.good{
+  color:var(--green);
+}
+
+.warn{
+  color:var(--gold);
+}
+
+.alert{
+  color:var(--red);
+}
+
+.cyan{
+  color:var(--cyan);
+}
+
+.violet{
+  color:var(--violet);
+}
+
+/* =========================================================
+   BUTTON GROUP
+   ========================================================= */
+
+.actions{
+  display:flex;
+
+  gap:6px;
+
+  flex-wrap:wrap;
+}
+
+.row{
+  display:flex;
+
+  gap:7px;
+
+  flex-wrap:wrap;
+}
+
+.row > *{
+  flex:1;
+  min-width:100px;
+}
+
+/* =========================================================
+   FEED
+   ========================================================= */
+
+.feed{
+  height:290px;
+
+  overflow:auto;
+
+  padding:7px;
+
+  background:#03070c;
+
+  border:
+    1px solid #182536;
+
+  border-radius:9px;
+
+  font:
+    10px/1.55
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+}
+
+.feed-line{
+  padding:4px 5px;
+
+  border-bottom:
+    1px solid #111b28;
+}
+
+.feed-time{
+  color:#657890;
+}
+
+.feed-type{
+  color:var(--cyan);
+}
+
+.feed-message{
+  color:#bdcbe0;
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.map{
+  position:relative;
+
+  width:100%;
+
+  height:450px;
+
+  overflow:hidden;
+
+  border:
+    1px solid #1b2c42;
+
+  border-radius:11px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #0d1b2b,
+      #050a11 70%
+    );
+}
+
+.map-grid{
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+    linear-gradient(
+      rgba(88,231,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(88,231,255,.035) 1px,
+      transparent 1px
+    );
+
+  background-size:32px 32px;
+}
+
+svg{
+  width:100%;
+  height:100%;
+}
+
+.edge{
+  stroke:#263c55;
+
+  stroke-width:1;
+
+  opacity:.6;
+}
+
+.edge-flow{
+  stroke:var(--violet);
+
+  stroke-width:1.5;
+
+  stroke-dasharray:5 6;
+
+  opacity:.8;
+
+  animation:
+    flow 1.7s linear infinite;
+}
+
+@keyframes flow{
+  to{
+    stroke-dashoffset:-22;
+  }
+}
+
+.node{
+  cursor:pointer;
+}
+
+.node circle{
+  fill:#091521;
+
+  stroke:var(--cyan);
+
+  stroke-width:1.3;
+}
+
+.node.protected circle{
+  stroke:var(--gold);
+
+  fill:#19170e;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(230,195,106,.35)
+    );
+}
+
+.node.danger circle{
+  stroke:var(--red);
+}
+
+.node text{
+  fill:#b8c7da;
+
+  font-size:8px;
+
+  pointer-events:none;
+}
+
+/* =========================================================
+   MATRIX
+   ========================================================= */
+
+.matrix{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:6px;
+}
+
+.matrix-item{
+  padding:8px;
+
+  min-width:0;
+
+  border:
+    1px solid #1d2b3d;
+
+  border-radius:8px;
+
+  background:#060b12;
+}
+
+.matrix-item small{
+  display:block;
+
+  color:var(--muted);
+
+  font-size:8px;
+
+  letter-spacing:.1em;
+
+  text-transform:uppercase;
+}
+
+.matrix-item b{
+  display:block;
+
+  margin-top:3px;
+
+  font-size:12px;
+}
+
+/* =========================================================
+   PIPELINE
+   ========================================================= */
+
+.pipeline{
+  display:grid;
+
+  grid-template-columns:
+    repeat(7,minmax(0,1fr));
+
+  gap:5px;
+}
+
+.pipeline-step{
+  padding:10px 7px;
+
+  border:
+    1px solid #23354b;
+
+  border-radius:8px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0c1724,
+      #070c14
+    );
+
+  position:relative;
+}
+
+.pipeline-step:not(:last-child)::after{
+  content:"›";
+
+  position:absolute;
+
+  right:-8px;
+
+  top:50%;
+
+  transform:translateY(-50%);
+
+  color:var(--cyan);
+
+  z-index:2;
+}
+
+.pipeline-step strong{
+  display:block;
+
+  color:var(--cyan);
+
+  font-size:9px;
+
+  letter-spacing:.1em;
+}
+
+.pipeline-step small{
+  color:var(--muted);
+
+  font-size:8px;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-wrap{
+  max-height:330px;
+
+  overflow:auto;
+}
+
+table{
+  width:100%;
+
+  border-collapse:collapse;
+
+  font-size:10px;
+}
+
+th{
+  position:sticky;
+
+  top:0;
+
+  background:#0b121c;
+
+  color:var(--muted);
+
+  font-weight:500;
+
+  text-align:left;
+}
+
+th,
+td{
+  padding:7px;
+
+  border-bottom:
+    1px solid #172334;
+
+  white-space:nowrap;
+}
+
+tr:hover td{
+  background:#0c1622;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge{
+  display:inline-block;
+
+  padding:2px 6px;
+
+  border-radius:999px;
+
+  background:#0d1825;
+
+  border:1px solid #263a50;
+
+  color:#b8c9de;
+
+  font-size:8px;
+}
+
+.badge.green{
+  border-color:#245d46;
+
+  color:var(--green);
+}
+
+.badge.gold{
+  border-color:#655225;
+
+  color:var(--gold);
+}
+
+.badge.red{
+  border-color:#642b38;
+
+  color:var(--red);
+}
+
+/* =========================================================
+   PROTECTION CIRCLE
+   ========================================================= */
+
+.protection-list{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+  gap:6px;
+}
+
+.protected-node{
+  padding:9px;
+
+  border:
+    1px solid #27384e;
+
+  border-radius:9px;
+
+  background:#070d15;
+}
+
+.protected-node h3{
+  margin:0;
+
+  font-size:12px;
+}
+
+.protected-node p{
+  margin:3px 0;
+
+  color:var(--muted);
+
+  font-size:9px;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.notice{
+  padding:9px;
+
+  border-left:
+    3px solid var(--gold);
+
+  border-radius:6px;
+
+  background:
+    rgba(65,51,18,.18);
+
+  color:#bfb79f;
+
+  font-size:10px;
+}
+
+/* =========================================================
+   LOGO CORE
+   ========================================================= */
+
+.core-orb{
+  width:90px;
+  height:90px;
+
+  margin:auto;
+
+  border-radius:50%;
+
+  border:1px solid #3c7184;
+
+  background:
+    radial-gradient(
+      circle,
+      #173342,
+      #07111b 55%,
+      #03070c
+    );
+
+  box-shadow:
+    0 0 30px rgba(88,231,255,.14),
+    inset 0 0 25px rgba(88,231,255,.1);
+
+  display:grid;
+
+  place-items:center;
+
+  font-size:10px;
+
+  color:var(--cyan);
+
+  letter-spacing:.1em;
+
+  text-align:center;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal{
+  position:fixed;
+
+  inset:0;
+
+  z-index:100;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:15px;
+
+  background:
+    rgba(0,0,0,.76);
+
+  backdrop-filter:blur(9px);
+}
+
+.modal.open{
+  display:flex;
+}
+
+.modal-box{
+  width:min(760px,100%);
+
+  max-height:88vh;
+
+  overflow:auto;
+
+  padding:15px;
+
+  border:
+    1px solid #354b64;
+
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1622,
+      #060b12
+    );
+
+  box-shadow:
+    0 40px 120px #000;
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+.toast{
+  position:fixed;
+
+  right:15px;
+  bottom:15px;
+
+  z-index:200;
+
+  padding:10px 13px;
+
+  border:
+    1px solid #34526d;
+
+  border-radius:9px;
+
+  background:#0c1724;
+
+  box-shadow:var(--shadow);
+
+  transform:
+    translateY(30px);
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.2s;
+}
+
+.toast.show{
+  transform:translateY(0);
+
+  opacity:1;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:1200px){
+
+  .app{
+    grid-template-columns:78px minmax(0,1fr);
+  }
+
+  .sidebar{
+    padding:9px;
+  }
+
+  .brand-main{
+    font-size:11px;
+  }
+
+  .brand-sub{
+    font-size:7px;
+  }
+
+  .brand-status,
+  .sidebar-card{
+    display:none;
+  }
+
+  .nav button{
+    text-align:center;
+
+    font-size:0;
+  }
+
+  .nav-icon{
+    width:auto;
+
+    font-size:14px;
+  }
+
+  .topbar{
+    grid-template-columns:
+      repeat(3,1fr);
+  }
+
+  .identity{
+    grid-column:span 3;
+  }
+
+  .c8,
+  .c7,
+  .c6,
+  .c5,
+  .c4,
+  .c3{
+    grid-column:span 12;
+  }
+}
+
+@media(max-width:700px){
+
+  .app{
+    display:block;
+  }
+
+  .sidebar{
+    position:sticky;
+
+    top:0;
+
+    height:auto;
+
+    display:flex;
+
+    gap:7px;
+
+    overflow-x:auto;
+
+    border-right:0;
+
+    border-bottom:1px solid var(--line);
+
+    z-index:50;
+  }
+
+  .brand{
+    min-width:130px;
+
+    border:0;
+
+    padding:5px;
+  }
+
+  .nav{
+    display:flex;
+
+    margin:0;
+  }
+
+  .nav button{
+    min-width:48px;
+
+    padding:8px;
+  }
+
+  .main{
+    padding:8px;
+  }
+
+  .topbar{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .identity{
+    grid-column:span 2;
+  }
+
+  .telemetry{
+    min-width:0;
+  }
+
+  .kpis{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .matrix{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .pipeline{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .pipeline-step:not(:last-child)::after{
+    display:none;
+  }
+
+  .map{
+    height:350px;
+  }
+
+  .feed{
+    height:220px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside class="sidebar">
+
+  <div class="brand">
+
+    <div class="brand-main">
+      ZIONCORE
+    </div>
+
+    <div class="brand-sub">
+      SQIE // ZSQIP-2.0
+    </div>
+
+    <div class="brand-status">
+      <span class="status-dot"></span>
+      PROTECTIVE CORE ONLINE
+    </div>
+
+  </div>
+
+  <nav class="nav">
+
+    <button class="active" data-view="command">
+      <span class="nav-icon">◈</span>
+      Command Nexus
+    </button>
+
+    <button data-view="network">
+      <span class="nav-icon">⌘</span>
+      Network Intelligence
+    </button>
+
+    <button data-view="simulation">
+      <span class="nav-icon">∿</span>
+      Simulation Laboratory
+    </button>
+
+    <button data-view="pioneer">
+      <span class="nav-icon">✦</span>
+      Pioneer Engine
+    </button>
+
+    <button data-view="prophetic">
+      <span class="nav-icon">◉</span>
+      Prophetic Console
+    </button>
+
+    <button data-view="audit">
+      <span class="nav-icon">▣</span>
+      Audit / Memory
+    </button>
+
+    <button data-view="config">
+      <span class="nav-icon">⚙</span>
+      Configuration
+    </button>
+
+  </nav>
+
+  <div class="sidebar-card">
+
+    <h4>Core State</h4>
+
+    <div>
+      Protection:
+      <strong class="good">ARMED</strong>
+    </div>
+
+    <div>
+      Storage:
+      <strong class="cyan">LOCAL</strong>
+    </div>
+
+    <div>
+      Audit:
+      <strong class="good">CHAINED</strong>
+    </div>
+
+    <div>
+      Simulation:
+      <strong class="violet">READY</strong>
+    </div>
+
+  </div>
+
+  <div class="sidebar-card">
+
+    <h4>Protocol</h4>
+
+    <div>ZSQIP 2.0</div>
+    <div>SQIE CORE</div>
+    <div>NIM</div>
+    <div>EEA</div>
+    <div>PPM</div>
+    <div>ISG</div>
+    <div>FLL</div>
+    <div>PIONEER</div>
+
+  </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="main">
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+  <div class="identity">
+
+    <h1>
+      SPIRITUAL-QUANTUM INTELLIGENCE &
+      PROTECTIVE RESILIENCE CORE
+    </h1>
+
+    <p>
+      Observation → mathematical model →
+      interpretation → protective response →
+      verification → learning
+    </p>
+
+  </div>
+
+  <div class="telemetry">
+    <label>Protection</label>
+    <strong class="good" id="topProtection">
+      ARMED
+    </strong>
+  </div>
+
+  <div class="telemetry">
+    <label>Resilience</label>
+    <strong id="topResilience">
+      78%
+    </strong>
+  </div>
+
+  <div class="telemetry">
+    <label>Coherence</label>
+    <strong id="topCoherence">
+      91%
+    </strong>
+  </div>
+
+  <div class="telemetry">
+    <label>Connectivity</label>
+    <strong class="ok" id="topConnectivity">
+      ONLINE
+    </strong>
+  </div>
+
+  <div class="telemetry">
+    <label>System Time</label>
+    <strong id="topClock">
+      --:--:--
+    </strong>
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     COMMAND NEXUS
+     ===================================================== -->
+
+<section id="command" class="view active">
+
+<div class="grid">
+
+<!-- KPI -->
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Core Telemetry Matrix</h2>
+    <span>LIVE / LOCAL</span>
+  </div>
+
+  <div class="kpis">
+
+    <div class="kpi">
+      <label>Network Nodes</label>
+      <strong id="kNodes">64</strong>
+      <small>model entities</small>
+    </div>
+
+    <div class="kpi">
+      <label>Graph Edges</label>
+      <strong id="kEdges">96</strong>
+      <small>relationships</small>
+    </div>
+
+    <div class="kpi">
+      <label>Loops</label>
+      <strong id="kLoops">8</strong>
+      <small>modelled cycles</small>
+    </div>
+
+    <div class="kpi">
+      <label>Uncertainty</label>
+      <strong id="kUncertainty">12%</strong>
+      <small>model uncertainty</small>
+    </div>
+
+    <div class="kpi">
+      <label>Defence Gain</label>
+      <strong class="good" id="kDefence">
+        +23%
+      </strong>
+      <small>simulated</small>
+    </div>
+
+    <div class="kpi">
+      <label>Experiments</label>
+      <strong id="kExperiments">0</strong>
+      <small>completed</small>
+    </div>
+
+    <div class="kpi">
+      <label>Protected</label>
+      <strong id="kProtected">0</strong>
+      <small>authorised nodes</small>
+    </div>
+
+    <div class="kpi">
+      <label>Audit</label>
+      <strong class="good">
+        VALID
+      </strong>
+      <small>hash linked</small>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- PROTECTION CIRCLE -->
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Protection Circle</h2>
+    <span>OWNER AUTHORISED</span>
+  </div>
+
+  <div class="row">
+
+    <input
+      id="personName"
+      placeholder="Display name"
+    >
+
+    <input
+      id="personRelation"
+      placeholder="Relation / branch"
+    >
+
+    <select id="personLevel">
+
+      <option>CORE</option>
+      <option>EXTENDED</option>
+      <option>DESCENDANT</option>
+
+    </select>
+
+    <button
+      class="primary"
+      onclick="addProtectedNode()"
+    >
+      + ADD PROTECTED NODE
+    </button>
+
+  </div>
+
+  <div
+    id="protectionList"
+    class="protection-list"
+    style="margin-top:8px"
+  ></div>
+
+</div>
+
+
+<!-- MAP -->
+
+<div class="card c8">
+
+  <div class="section-title">
+    <h2>Live Intelligence Map</h2>
+    <span id="mapStatus">
+      LIVE GRAPH
+    </span>
+  </div>
+
+  <div class="map">
+
+    <div class="map-grid"></div>
+
+    <svg
+      id="commandMap"
+      viewBox="0 0 900 450"
+      preserveAspectRatio="xMidYMid meet">
+    </svg>
+
+  </div>
+
+</div>
+
+
+<!-- LIVE FEED -->
+
+<div class="card c4">
+
+  <div class="section-title">
+    <h2>Live Intelligence</h2>
+    <span>EVENT BUS</span>
+  </div>
+
+  <div
+    id="liveFeed"
+    class="feed">
+  </div>
+
+</div>
+
+
+<!-- PIPELINE -->
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Protection Intelligence Pipeline</h2>
+    <span>ZSQIE CORE</span>
+  </div>
+
+  <div class="pipeline">
+
+    <div class="pipeline-step">
+      <strong>SENSE</strong>
+      <small>
+        observations
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>TRANSLATE</strong>
+      <small>
+        state vector
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>NIM</strong>
+      <small>
+        node intelligence
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>EEA</strong>
+      <small>
+        reinforcement
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>PPM</strong>
+      <small>
+        pathways
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>ISG</strong>
+      <small>
+        strategy
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>VERIFY</strong>
+      <small>
+        feedback
+      </small>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- SPIRITUAL INTERPRETATION -->
+
+<div class="card c7">
+
+  <div class="section-title">
+    <h2>Spiritual Interpretation Layer</h2>
+    <span>FAITH MODEL</span>
+  </div>
+
+  <div class="notice">
+
+    The spiritual layer allows the system to represent
+    concepts including hex, curse, hostile intention,
+    dark node, spiritual loop, energy sink, protection
+    node, blessing, prayer, divine alignment and
+    prophetic input.
+
+    These are interpretation entities and faith inputs;
+    the sensor/math layer does not present them as
+    experimentally validated physical detections.
+
+  </div>
+
+  <div
+    id="spiritualMatrix"
+    class="matrix"
+    style="margin-top:8px">
+  </div>
+
+</div>
+
+
+<!-- ACTION CENTRE -->
+
+<div class="card c5">
+
+  <div class="section-title">
+    <h2>Protective Action Centre</h2>
+    <span>DIGITAL / SIMULATED</span>
+  </div>
+
+  <div class="actions">
+
+    <button
+      class="primary"
+      onclick="runFullCycle()">
+      RUN FULL CYCLE
+    </button>
+
+    <button
+      onclick="activateProtection()">
+      ACTIVATE PROTECTION
+    </button>
+
+    <button
+      onclick="runSimulation(1000)">
+      SIMULATE ×1,000
+    </button>
+
+    <button
+      onclick="runSimulation(5000)">
+      SIMULATE ×5,000
+    </button>
+
+    <button
+      onclick="exportState()">
+      EXPORT
+    </button>
+
+  </div>
+
+  <div
+    id="cycleStatus"
+    class="notice"
+    style="margin-top:9px">
+
+    Core ready.
+
+  </div>
+
+</div>
+
+
+<!-- STRATEGIES -->
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Protective Strategy Matrix</h2>
+    <span>ISG</span>
+  </div>
+
+  <div
+    id="strategyMatrix"
+    class="table-wrap">
+  </div>
+
+</div>
+
+
+<!-- SYSTEM PHILOSOPHY -->
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Protection Doctrine</h2>
+    <span>MODEL CONTROL</span>
+  </div>
+
+  <div class="notice">
+
+    <strong>
+      OBSERVATION
+    </strong>
+
+    <br>
+
+    ↓
+
+    <br>
+
+    <strong>
+      MATHEMATICAL MODEL
+    </strong>
+
+    <br>
+
+    ↓
+
+    <br>
+
+    <strong>
+      PATTERN CLASSIFICATION
+    </strong>
+
+    <br>
+
+    ↓
+
+    <br>
+
+    <strong>
+      SPIRITUAL INTERPRETATION
+    </strong>
+
+    <br>
+
+    ↓
+
+    <br>
+
+    <strong>
+      PROTECTIVE RESPONSE
+    </strong>
+
+    <br>
+
+    ↓
+
+    <br>
+
+    <strong>
+      VERIFICATION
+    </strong>
+
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NETWORK VIEW
+     ===================================================== -->
+
+<section id="network" class="view">
+
+<div class="grid">
+
+<div class="card c8">
+
+  <div class="section-title">
+    <h2>Network Intelligence Graph</h2>
+    <span>NIM / PPM</span>
+  </div>
+
+  <div class="map">
+
+    <div class="map-grid"></div>
+
+    <svg
+      id="networkMap"
+      viewBox="0 0 900 450">
+    </svg>
+
+  </div>
+
+</div>
+
+
+<div class="card c4">
+
+  <div class="section-title">
+    <h2>Node Intelligence</h2>
+    <span>CLICK NODE</span>
+  </div>
+
+  <div
+    id="nodeInspector"
+    class="notice">
+
+    Select a graph node.
+
+  </div>
+
+  <div
+    id="networkSummary"
+    style="margin-top:10px">
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Adversarial Resource Graph</h2>
+    <span>EEA</span>
+  </div>
+
+  <div class="matrix">
+
+    <div class="matrix-item">
+      <small>FEAR</small>
+      <b id="fearFactor">0.42</b>
+    </div>
+
+    <div class="matrix-item">
+      <small>CONFLICT</small>
+      <b id="conflictFactor">0.31</b>
+    </div>
+
+    <div class="matrix-item">
+      <small>ISOLATION</small>
+      <b id="isolationFactor">0.27</b>
+    </div>
+
+    <div class="matrix-item">
+      <small>RECURSION</small>
+      <b id="recursionFactor">0.19</b>
+    </div>
+
+  </div>
+
+  <p class="muted">
+
+    The “economy of evil” is represented here as
+    a computational reinforcement graph:
+    undesirable patterns → reinforcing conditions →
+    feedback → recurrence.
+
+    This provides a mathematical simulation rather
+    than proof of literal supernatural resource transfer.
+
+  </p>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Node Intelligence Table</h2>
+    <span>MODEL STATE</span>
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>CLASS</th>
+          <th>VULNERABILITY</th>
+          <th>RESILIENCE</th>
+          <th>ACTIVITY</th>
+          <th>UNCERTAINTY</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="nodeTable">
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SIMULATION
+     ===================================================== -->
+
+<section id="simulation" class="view">
+
+<div class="grid">
+
+<div class="card c5">
+
+  <div class="section-title">
+    <h2>Simulation Laboratory</h2>
+    <span>SYNTHETIC AGENTS</span>
+  </div>
+
+  <div class="notice">
+
+    Every hostile agent in this laboratory is
+    mathematical and synthetic.
+
+    No real person is targeted.
+
+  </div>
+
+  <div style="margin-top:9px">
+
+    <label class="muted">
+      Strategy
+    </label>
+
+    <select id="simulationStrategy"></select>
+
+  </div>
+
+  <div style="margin-top:7px">
+
+    <label class="muted">
+      Trials
+    </label>
+
+    <input
+      id="simulationTrials"
+      type="number"
+      min="100"
+      max="100000"
+      value="5000">
+
+  </div>
+
+  <div
+    class="actions"
+    style="margin-top:8px">
+
+    <button
+      class="primary"
+      onclick="
+        runSimulation(
+          Number(
+            document.getElementById(
+              'simulationTrials'
+            ).value
+          )
+        )
+      ">
+      RUN EXPERIMENT
+    </button>
+
+    <button
+      onclick="runSimulation(1000)">
+      QUICK 1K
+    </button>
+
+  </div>
+
+  <div
+    id="simulationResult"
+    class="notice"
+    style="margin-top:9px">
+
+    Waiting for experiment.
+
+  </div>
+
+</div>
+
+
+<div class="card c7">
+
+  <div class="section-title">
+    <h2>Simulation Ledger</h2>
+    <span>FLL INPUT</span>
+  </div>
+
+  <div class="table-wrap">
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>EXPERIMENT</th>
+          <th>STRATEGY</th>
+          <th>TRIALS</th>
+          <th>GAIN</th>
+          <th>LOOP BREAK</th>
+          <th>RISK</th>
+        </tr>
+
+      </thead>
+
+      <tbody id="simulationTable">
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Simulation Metrics</h2>
+    <span>MODEL OUTPUT</span>
+  </div>
+
+  <div class="kpis">
+
+    <div class="kpi">
+      <label>Propagation</label>
+      <strong id="simPropagation">
+        0.00
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Resilience Gain</label>
+      <strong
+        class="good"
+        id="simResilience">
+        0.00%
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Loop Break</label>
+      <strong id="simLoop">
+        0.00%
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Uncertainty</label>
+      <strong id="simUncertainty">
+        0.00%
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Collateral</label>
+      <strong class="good">
+        0
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Human Harm</label>
+      <strong class="good">
+        0
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Confidence</label>
+      <strong id="simConfidence">
+        0.00
+      </strong>
+    </div>
+
+    <div class="kpi">
+      <label>Trials</label>
+      <strong id="simCount">
+        0
+      </strong>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PIONEER
+     ===================================================== -->
+
+<section id="pioneer" class="view">
+
+<div class="grid">
+
+<div class="card c5">
+
+  <div class="section-title">
+    <h2>Pioneer Engine</h2>
+    <span>GENERATIVE RESEARCH</span>
+  </div>
+
+  <div class="core-orb">
+    PIONEER<br>
+    ENGINE
+  </div>
+
+  <p class="muted">
+
+    Existing strategy + existing strategy +
+    observed vulnerability → new hypothesis →
+    simulation → result → knowledge.
+
+  </p>
+
+  <div class="actions">
+
+    <button
+      class="primary"
+      onclick="generatePioneerHypothesis()">
+      GENERATE HYPOTHESIS
+    </button>
+
+    <button
+      onclick="mutateStrategy()">
+      MUTATE STRATEGY
+    </button>
+
+  </div>
+
+  <div
+    id="pioneerResult"
+    class="notice"
+    style="margin-top:10px">
+
+    Pioneer laboratory ready.
+
+  </div>
+
+</div>
+
+
+<div class="card c7">
+
+  <div class="section-title">
+    <h2>Knowledge Library</h2>
+    <span>FLL / PIONEER</span>
+  </div>
+
+  <div
+    id="pioneerLibrary"
+    class="table-wrap">
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Strategy Genome</h2>
+    <span>EXPERIMENTAL SPACE</span>
+  </div>
+
+  <div
+    id="genomeMatrix"
+    class="matrix">
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROPHETIC
+     ===================================================== -->
+
+<section id="prophetic" class="view">
+
+<div class="grid">
+
+<div class="card c7">
+
+  <div class="section-title">
+    <h2>Prophetic Input Console</h2>
+    <span>HUMAN SPIRITUAL INPUT</span>
+  </div>
+
+  <textarea
+    id="propheticText"
+    rows="10"
+    placeholder="
+Enter prayer,
+prophetic reflection,
+scripture reference,
+spiritual interpretation,
+or protective instruction.
+"></textarea>
+
+  <div
+    class="row"
+    style="margin-top:8px">
+
+    <input
+      id="propheticSource"
+      placeholder="Source / context">
+
+    <select id="propheticConfidence">
+
+      <option value=".50">
+        0.50
+      </option>
+
+      <option value=".70">
+        0.70
+      </option>
+
+      <option value=".85">
+        0.85
+      </option>
+
+      <option value=".95">
+        0.95
+      </option>
+
+    </select>
+
+  </div>
+
+  <button
+    class="primary"
+    style="margin-top:8px"
+    onclick="storePropheticInput()">
+
+    STORE PROPHETIC INPUT
+
+  </button>
+
+</div>
+
+
+<div class="card c5">
+
+  <div class="section-title">
+    <h2>Interpretation Ledger</h2>
+    <span>PROVENANCE</span>
+  </div>
+
+  <div
+    id="propheticLedger"
+    class="feed">
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Spiritual Entity Registry</h2>
+    <span>MODEL VOCABULARY</span>
+  </div>
+
+  <div
+    id="entityRegistry"
+    class="matrix">
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AUDIT
+     ===================================================== -->
+
+<section id="audit" class="view">
+
+<div class="grid">
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Audit Chain</h2>
+    <span>SHA-256</span>
+  </div>
+
+  <div
+    id="auditFeed"
+    class="feed">
+  </div>
+
+  <button
+    style="margin-top:8px"
+    onclick="verifyAuditChain()">
+
+    VERIFY AUDIT CHAIN
+
+  </button>
+
+</div>
+
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Model Memory</h2>
+    <span>FLL</span>
+  </div>
+
+  <div
+    id="modelMemory"
+    class="feed">
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Intervention History</h2>
+    <span>ROLLBACK AWARE</span>
+  </div>
+
+  <div
+    id="interventionHistory"
+    class="table-wrap">
+  </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONFIG
+     ===================================================== -->
+
+<section id="config" class="view">
+
+<div class="grid">
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Core Configuration</h2>
+    <span>LOCAL</span>
+  </div>
+
+  <label class="muted">
+    Autonomous browser cycle interval
+  </label>
+
+  <input
+    id="cycleInterval"
+    type="number"
+    value="12000"
+    min="3000">
+
+  <label
+    class="muted"
+    style="display:block;margin-top:8px">
+
+    Operating mode
+
+  </label>
+
+  <select id="operatingMode">
+
+    <option>LOCAL</option>
+    <option>SIMULATION</option>
+    <option>MANUAL</option>
+
+  </select>
+
+  <div
+    class="actions"
+    style="margin-top:8px">
+
+    <button
+      class="primary"
+      onclick="saveConfiguration()">
+
+      SAVE
+
+    </button>
+
+    <button
+      onclick="importState()">
+
+      IMPORT
+
+    </button>
+
+    <button
+      onclick="exportState()">
+
+      EXPORT
+
+    </button>
+
+    <button
+      class="danger"
+      onclick="resetCore()">
+
+      RESET
+
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="card c6">
+
+  <div class="section-title">
+    <h2>Watchdog</h2>
+    <span>HEALTH MATRIX</span>
+  </div>
+
+  <div
+    id="watchdogMatrix"
+    class="matrix">
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Autonomy Architecture</h2>
+    <span>DEPLOYMENT MODEL</span>
+  </div>
+
+  <div class="pipeline">
+
+    <div class="pipeline-step">
+      <strong>IPHONE</strong>
+      <small>
+        command centre
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>LOCAL STATE</strong>
+      <small>
+        browser storage
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>WORKER</strong>
+      <small>
+        simulation
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>FLL</strong>
+      <small>
+        learning
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>PIONEER</strong>
+      <small>
+        hypothesis
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>AUDIT</strong>
+      <small>
+        integrity
+      </small>
+    </div>
+
+    <div class="pipeline-step">
+      <strong>BACKEND</strong>
+      <small>
+        true 24/7
+      </small>
+    </div>
+
+  </div>
+
+  <div
+    class="notice"
+    style="margin-top:10px">
+
+    A browser application can maintain its autonomous
+    cycle while the page is active. A genuinely persistent
+    24/7 engine while the phone/browser is closed requires
+    server-side execution such as Cloud Functions, a
+    scheduled runner, or another backend service.
+
+  </div>
+
+</div>
+
+
+<div class="card c12">
+
+  <div class="section-title">
+    <h2>Protective Scope</h2>
+    <span>SAFETY ARCHITECTURE</span>
+  </div>
+
+  <p class="muted">
+
+    Synthetic hostile agents are mathematical test agents.
+    Protective strategies modify simulated graphs,
+    resilience variables and digital state.
+
+    The system does not attack, curse, surveil, dox,
+    manipulate or physically target real people.
+
+    Human protection-circle nodes require explicit
+    owner-authorised entry.
+
+  </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer
+  style="
+    text-align:center;
+    padding:16px 5px 5px;
+    color:#667890;
+    font-size:9px;
+    letter-spacing:.14em;
+  ">
+
+  MWARI NDI MWARI · HOUSE OF MASAWI ·
+  ZSQIP-2.0 · ZIONCORE SQIE
+
+</footer>
+
+</main>
+</div>
+
+
+<!-- =====================================================
+     NODE MODAL
+     ===================================================== -->
+
+<div
+  id="nodeModal"
+  class="modal">
+
+  <div class="modal-box">
+
+    <div class="section-title">
+
+      <h2 id="modalTitle">
+        NODE INTELLIGENCE
+      </h2>
+
+      <button onclick="closeModal()">
+        ×
+      </button>
+
+    </div>
+
+    <div id="modalBody"></div>
+
+  </div>
+
+</div>
+
+
+<div
+  id="toast"
+  class="toast">
+</div>
+
+
+<script>
+/* =========================================================
+   ZIONCORE SQIE v2.0 ENGINE
+   ========================================================= */
+
+"use strict";
+
+
+/* =========================================================
+   STATE
+   ========================================================= */
+
+const CORE = {
+
+  version:"2.0",
+
+  protection:"ARMED",
+
+  resilience:78,
+
+  coherence:91,
+
+  nodes:[],
+
+  edges:[],
+
+  protectedNodes:[],
+
+  strategies:[],
+
+  experiments:[],
+
+  pioneerLibrary:[],
+
+  propheticInputs:[],
+
+  memory:[],
+
+  interventions:[],
+
+  audit:[],
+
+  config:{
+    cycleInterval:12000,
+    mode:"LOCAL"
+  }
+
+};
+
+
+/* =========================================================
+   SPIRITUAL ENTITY REGISTRY
+   ========================================================= */
+
+const SPIRITUAL_ENTITIES = [
+
+  "HEX",
+  "CURSE",
+  "HOSTILE INTENTION",
+  "DARK NODE",
+  "SPIRITUAL LOOP",
+  "ENERGY SINK",
+  "PROTECTION NODE",
+  "BLESSING",
+  "PRAYER",
+  "DIVINE ALIGNMENT",
+  "PROPHETIC INPUT"
+
+];
+
+
+/* =========================================================
+   STRATEGY REGISTRY
+   ========================================================= */
+
+const BASE_STRATEGIES = [
+
+  {
+    name:"CLOAK",
+    description:
+      "Reduce unnecessary exposed metadata within the model.",
+    category:"PRIVACY",
+    score:.61
+  },
+
+  {
+    name:"DECOY",
+    description:
+      "Create a synthetic decoy signal inside simulation only.",
+    category:"SIMULATION",
+    score:.56
+  },
+
+  {
+    name:"DAMP",
+    description:
+      "Reduce amplification and propagation coefficients.",
+    category:"RESILIENCE",
+    score:.66
+  },
+
+  {
+    name:"DECOUPLE",
+    description:
+      "Weaken a model relationship that reinforces an undesirable loop.",
+    category:"GRAPH",
+    score:.58
+  },
+
+  {
+    name:"LOOP-INVERT",
+    description:
+      "Reverse simulated feedback polarity.",
+    category:"GRAPH",
+    score:.54
+  },
+
+  {
+    name:"REINFORCE",
+    description:
+      "Increase resilience of a selected model node.",
+    category:"RESILIENCE",
+    score:.72
+  },
+
+  {
+    name:"CHOKEPOINT",
+    description:
+      "Strengthen a critical model connection.",
+    category:"GRAPH",
+    score:.63
+  },
+
+  {
+    name:"VALUE-SUBSTITUTE",
+    description:
+      "Replace a reinforcing factor with a neutral or positive factor.",
+    category:"RESILIENCE",
+    score:.69
+  }
+
+];
+
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+
+function uid(prefix){
+
+  return (
+    prefix +
+    "-" +
+    Date.now().toString(36) +
+    "-" +
+    Math.random()
+      .toString(36)
+      .slice(2,8)
+      .toUpperCase()
+  );
+
+}
+
+
+function random(min,max){
+
+  return Math.random() *
+    (max-min) +
+    min;
+
+}
+
+
+function randomInt(min,max){
+
+  return Math.floor(
+    random(min,max+1)
+  );
+
+}
+
+
+function clamp(value,min,max){
+
+  return Math.max(
+    min,
+    Math.min(max,value)
+  );
+
+}
+
+
+function escapeHTML(value){
+
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      char => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#039;"
+      })[char]
+    );
+
+}
+
+
+/* =========================================================
+   STORAGE
+   ========================================================= */
+
+const STORAGE_KEY =
+  "ZIONCORE_SQIE_V2_STATE";
+
+
+function saveState(){
+
+  try{
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(CORE)
+    );
+
+  }catch(error){
+
+    console.warn(
+      "Local persistence unavailable",
+      error
+    );
+
+  }
+
+}
+
+
+function loadState(){
+
+  try{
+
+    const raw =
+      localStorage.getItem(
+        STORAGE_KEY
+      );
+
+    if(raw){
+
+      const parsed =
+        JSON.parse(raw);
+
+      Object.assign(
+        CORE,
+        parsed
+      );
+
+    }
+
+  }catch(error){
+
+    console.warn(
+      "Could not load state",
+      error
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   SEED NETWORK
+   ========================================================= */
+
+function createSeedNetwork(){
+
+  CORE.nodes = [];
+
+  CORE.edges = [];
+
+  const NODE_COUNT = 64;
+
+  for(
+    let i=0;
+    i<NODE_COUNT;
+    i++
+  ){
+
+    CORE.nodes.push({
+
+      id:
+        "N" +
+        String(i+1)
+          .padStart(3,"0"),
+
+      type:
+        i < 8
+          ? "PROTECTION"
+          : "MODEL",
+
+      vulnerability:
+        randomInt(10,88),
+
+      resilience:
+        randomInt(42,96),
+
+      activity:
+        randomInt(5,98),
+
+      uncertainty:
+        randomInt(4,32),
+
+      centrality:
+        randomInt(5,91),
+
+      x:
+        random(35,865),
+
+      y:
+        random(30,420)
+
+    });
+
+  }
+
+
+  for(
+    let i=0;
+    i<115;
+    i++
+  ){
+
+    const a =
+      randomInt(
+        0,
+        NODE_COUNT-1
+      );
+
+    const b =
+      randomInt(
+        0,
+        NODE_COUNT-1
+      );
+
+    if(a !== b){
+
+      CORE.edges.push({
+
+        a,
+        b,
+
+        weight:
+          Number(
+            random(.1,.95)
+              .toFixed(3)
+          )
+
+      });
+
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   STRATEGIES
+   ========================================================= */
+
+function initialiseStrategies(){
+
+  if(
+    !Array.isArray(
+      CORE.strategies
+    ) ||
+    !CORE.strategies.length
+  ){
+
+    CORE.strategies =
+      BASE_STRATEGIES.map(
+        strategy => ({
+
+          id:uid("STR"),
+
+          ...strategy
+
+        })
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+document
+  .querySelectorAll(".nav button")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".nav button")
+          .forEach(
+            b =>
+              b.classList.remove(
+                "active"
+              )
+          );
+
+        button.classList.add(
+          "active"
+        );
+
+
+        document
+          .querySelectorAll(".view")
+          .forEach(
+            view =>
+              view.classList.remove(
+                "active"
+              )
+          );
+
+
+        const target =
+          document.getElementById(
+            button.dataset.view
+          );
+
+        if(target){
+
+          target.classList.add(
+            "active"
+          );
+
+        }
+
+
+        renderAll();
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   LOGGING
+   ========================================================= */
+
+function logEvent(
+  type,
+  message
+){
+
+  const feed =
+    document.getElementById(
+      "liveFeed"
+    );
+
+  if(feed){
+
+    const row =
+      document.createElement(
+        "div"
+      );
+
+    row.className =
+      "feed-line";
+
+    row.innerHTML =
+
+      `<span class="feed-time">
+        ${new Date().toLocaleTimeString()}
+      </span>
+      <span class="feed-type">
+        ${escapeHTML(type)}
+      </span>
+      <span class="feed-message">
+        ${escapeHTML(message)}
+      </span>`;
+
+    feed.prepend(row);
+
+    while(
+      feed.children.length >
+      150
+    ){
+
+      feed.lastElementChild
+        .remove();
+
+    }
+
+  }
+
+  addAudit(
+    type,
+    message
+  );
+
+}
+
+
+/* =========================================================
+   HASH AUDIT
+   ========================================================= */
+
+async function hashString(
+  value
+){
+
+  try{
+
+    const buffer =
+      await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder().encode(
+          value
+        )
+      );
+
+    return [
+      ...new Uint8Array(buffer)
+    ]
+      .map(
+        byte =>
+          byte
+            .toString(16)
+            .padStart(2,"0")
+      )
+      .join("");
+
+  }catch{
+
+    return btoa(
+      unescape(
+        encodeURIComponent(
+          value
+        )
+      )
+    ).slice(0,64);
+
+  }
+
+}
+
+
+async function addAudit(
+  type,
+  message
+){
+
+  const previous =
+    CORE.audit.length
+      ? CORE.audit[
+          CORE.audit.length-1
+        ].hash
+      : "GENESIS";
+
+
+  const timestamp =
+    Date.now();
+
+
+  const payload =
+    JSON.stringify({
+
+      timestamp,
+      type,
+      message,
+      previous
+
+    });
+
+
+  const hash =
+    await hashString(
+      payload
+    );
+
+
+  CORE.audit.push({
+
+    timestamp,
+    type,
+    message,
+    previous,
+    hash
+
+  });
+
+
+  if(
+    CORE.audit.length >
+    1000
+  ){
+
+    CORE.audit =
+      CORE.audit.slice(-1000);
+
+  }
+
+
+  saveState();
+
+  renderAudit();
+
+}
+
+
+/* =========================================================
+   PROTECTION CIRCLE
+   ========================================================= */
+
+function addProtectedNode(){
+
+  const name =
+    document
+      .getElementById(
+        "personName"
+      )
+      .value
+      .trim();
+
+
+  if(!name){
+
+    toast(
+      "Enter a protected display name."
+    );
+
+    return;
+
+  }
+
+
+  const relation =
+    document
+      .getElementById(
+        "personRelation"
+      )
+      .value
+      .trim();
+
+
+  const level =
+    document
+      .getElementById(
+        "personLevel"
+      )
+      .value;
+
+
+  CORE.protectedNodes.push({
+
+    id:uid("PROTECT"),
+
+    name,
+
+    relation,
+
+    level,
+
+    created:
+      Date.now(),
+
+    authorised:true
+
+  });
+
+
+  document
+    .getElementById(
+      "personName"
+    )
+    .value = "";
+
+
+  document
+    .getElementById(
+      "personRelation"
+    )
+    .value = "";
+
+
+  logEvent(
+    "PROTECT",
+    "Authorised protection-circle node added."
+  );
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+function removeProtectedNode(
+  index
+){
+
+  CORE.protectedNodes
+    .splice(index,1);
+
+  logEvent(
+    "PROTECT",
+    "Protection-circle node removed."
+  );
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+function renderProtectionCircle(){
+
+  const container =
+    document.getElementById(
+      "protectionList"
+    );
+
+  if(!container)
+    return;
+
+
+  if(
+    !CORE.protectedNodes.length
+  ){
+
+    container.innerHTML =
+
+      `<div class="notice">
+        No protected nodes stored.
+        Add only people for whom you
+        have appropriate authorisation.
+      </div>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    CORE.protectedNodes
+      .map(
+        (node,index) =>
+
+          `<div class="protected-node">
+
+            <h3>
+              ${escapeHTML(node.name)}
+            </h3>
+
+            <p>
+              ${escapeHTML(
+                node.relation ||
+                "Protected node"
+              )}
+            </p>
+
+            <span class="badge gold">
+              ${escapeHTML(node.level)}
+            </span>
+
+            <span class="badge green">
+              AUTHORISED
+            </span>
+
+            <button
+              style="float:right;padding:3px 7px"
+              onclick="removeProtectedNode(${index})">
+              ×
+            </button>
+
+          </div>`
+
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   GRAPH DRAWING
+   ========================================================= */
+
+function drawGraph(
+  svgId
+){
+
+  const svg =
+    document.getElementById(
+      svgId
+    );
+
+  if(!svg)
+    return;
+
+
+  const NS =
+    "http://www.w3.org/2000/svg";
+
+
+  svg.innerHTML = "";
+
+
+  /* edges */
+
+  CORE.edges.forEach(
+    (edge,index) => {
+
+      const a =
+        CORE.nodes[edge.a];
+
+      const b =
+        CORE.nodes[edge.b];
+
+
+      if(!a || !b)
+        return;
+
+
+      const line =
+        document.createElementNS(
+          NS,
+          "line"
+        );
+
+
+      line.setAttribute(
+        "x1",
+        a.x
+      );
+
+      line.setAttribute(
+        "y1",
+        a.y
+      );
+
+      line.setAttribute(
+        "x2",
+        b.x
+      );
+
+      line.setAttribute(
+        "y2",
+        b.y
+      );
+
+
+      line.setAttribute(
+        "class",
+        index % 7 === 0
+          ? "edge-flow"
+          : "edge"
+      );
+
+
+      svg.appendChild(
+        line
+      );
+
+    }
+  );
+
+
+  /* nodes */
+
+  CORE.nodes.forEach(
+    node => {
+
+      const group =
+        document.createElementNS(
+          NS,
+          "g"
+        );
+
+
+      group.classList.add(
+        "node"
+      );
+
+
+      if(
+        node.type ===
+        "PROTECTION"
+      ){
+
+        group.classList.add(
+          "protected"
+        );
+
+      }
+
+
+      if(
+        node.vulnerability >
+        78
+      ){
+
+        group.classList.add(
+          "danger"
+        );
+
+      }
+
+
+      const circle =
+        document.createElementNS(
+          NS,
+          "circle"
+        );
+
+
+      circle.setAttribute(
+        "cx",
+        node.x
+      );
+
+      circle.setAttribute(
+        "cy",
+        node.y
+      );
+
+      circle.setAttribute(
+        "r",
+        node.type ===
+        "PROTECTION"
+          ? 7
+          : 4
+      );
+
+
+      group.appendChild(
+        circle
+      );
+
+
+      if(
+        node.type ===
+        "PROTECTION"
+      ){
+
+        const text =
+          document.createElementNS(
+            NS,
+            "text"
+          );
+
+
+        text.setAttribute(
+          "x",
+          node.x + 10
+        );
+
+        text.setAttribute(
+          "y",
+          node.y + 3
+        );
+
+
+        text.textContent =
+          node.id;
+
+
+        group.appendChild(
+          text
+        );
+
+      }
+
+
+      group.addEventListener(
+        "click",
+        () =>
+          inspectNode(node)
+      );
+
+
+      svg.appendChild(
+        group
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   NODE INTELLIGENCE
+   ========================================================= */
+
+function inspectNode(
+  node
+){
+
+  const html =
+
+    `<div class="matrix">
+
+      <div class="matrix-item">
+        <small>NODE</small>
+        <b>${node.id}</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>CLASS</small>
+        <b>${node.type}</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>VULNERABILITY</small>
+        <b>${node.vulnerability}%</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>RESILIENCE</small>
+        <b>${node.resilience}%</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>ACTIVITY</small>
+        <b>${node.activity}%</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>UNCERTAINTY</small>
+        <b>${node.uncertainty}%</b>
+      </div>
+
+      <div class="matrix-item">
+        <small>CENTRALITY</small>
+        <b>${node.centrality}%</b>
+      </div>
+
+    </div>
+
+    <div class="notice" style="margin-top:9px">
+
+      These values are graph/model variables.
+      They are not medical diagnoses and do not
+      establish supernatural activity.
+
+    </div>`;
+
+
+  const inspector =
+    document.getElementById(
+      "nodeInspector"
+    );
+
+
+  if(inspector)
+    inspector.innerHTML =
+      html;
+
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
+    "NODE INTELLIGENCE · " +
+    node.id;
+
+
+  document.getElementById(
+    "modalBody"
+  ).innerHTML =
+    html;
+
+
+  document
+    .getElementById(
+      "nodeModal"
+    )
+    .classList.add(
+      "open"
+    );
+
+}
+
+
+function closeModal(){
+
+  document
+    .getElementById(
+      "nodeModal"
+    )
+    .classList.remove(
+      "open"
+    );
+
+}
+
+
+/* =========================================================
+   SPIRITUAL MATRIX
+   ========================================================= */
+
+function renderSpiritualEntities(){
+
+  const matrix =
+    document.getElementById(
+      "spiritualMatrix"
+    );
+
+  const registry =
+    document.getElementById(
+      "entityRegistry"
+    );
+
+
+  const html =
+    SPIRITUAL_ENTITIES
+      .map(
+        entity => {
+
+          const confidence =
+            randomInt(
+              45,
+              94
+            );
+
+          return `
+
+            <div class="matrix-item">
+
+              <small>
+                ${entity}
+              </small>
+
+              <b>
+                ${confidence}%
+              </b>
+
+            </div>
+
+          `;
+
+        }
+      )
+      .join("");
+
+
+  if(matrix)
+    matrix.innerHTML =
+      html;
+
+
+  if(registry)
+    registry.innerHTML =
+      SPIRITUAL_ENTITIES
+        .map(
+          entity =>
+
+            `<div class="matrix-item">
+
+              <small>
+                MODEL ENTITY
+              </small>
+
+              <b>
+                ${entity}
+              </b>
+
+            </div>`
+
+        )
+        .join("");
+
+}
+
+
+/* =========================================================
+   STRATEGY MATRIX
+   ========================================================= */
+
+function renderStrategies(){
+
+  const container =
+    document.getElementById(
+      "strategyMatrix"
+    );
+
+
+  if(container){
+
+    container.innerHTML = `
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>STRATEGY</th>
+            <th>CLASS</th>
+            <th>SCORE</th>
+            <th>FUNCTION</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          ${
+            CORE.strategies
+              .map(
+                strategy => `
+
+                  <tr>
+
+                    <td>
+                      <strong>
+                        ${escapeHTML(
+                          strategy.name
+                        )}
+                      </strong>
+                    </td>
+
+                    <td>
+                      <span class="badge">
+                        ${escapeHTML(
+                          strategy.category
+                        )}
+                      </span>
+                    </td>
+
+                    <td>
+                      ${Math.round(
+                        strategy.score*100
+                      )}%
+                    </td>
+
+                    <td>
+                      ${escapeHTML(
+                        strategy.description
+                      )}
+                    </td>
+
+                  </tr>
+
+                `
+              )
+              .join("")
+          }
+
+        </tbody>
+
+      </table>`;
+
+  }
+
+
+  const select =
+    document.getElementById(
+      "simulationStrategy"
+    );
+
+
+  if(select){
+
+    select.innerHTML =
+      CORE.strategies
+        .map(
+          strategy =>
+
+            `<option value="${strategy.id}">
+              ${escapeHTML(
+                strategy.name
+              )}
+            </option>`
+
+        )
+        .join("");
+
+  }
+
+}
+
+
+/* =========================================================
+   SENSE
+   ========================================================= */
+
+function sense(){
+
+  return {
+
+    timestamp:Date.now(),
+
+    online:navigator.onLine,
+
+    viewport:{
+      width:innerWidth,
+      height:innerHeight
+    },
+
+    visibility:
+      document.visibilityState,
+
+    time:
+      new Date().toISOString(),
+
+    randomObservation:
+      random(0,1)
+
+  };
+
+}
+
+
+/* =========================================================
+   TRANSLATE
+   ========================================================= */
+
+function translate(
+  observation
+){
+
+  return {
+
+    connectivity:
+      observation.online
+        ? 1
+        : 0,
+
+    visibility:
+      observation.visibility ===
+      "visible"
+        ? 1
+        : 0,
+
+    temporal:
+      observation.randomObservation,
+
+    stability:
+      .5 +
+      observation.randomObservation
+      * .5
+
+  };
+
+}
+
+
+/* =========================================================
+   NIM
+   ========================================================= */
+
+function runNIM(){
+
+  CORE.nodes.forEach(
+    node => {
+
+      const pressure =
+        random(-7,7);
+
+
+      node.vulnerability =
+        clamp(
+          node.vulnerability +
+          pressure,
+          0,
+          100
+        );
+
+
+      node.resilience =
+        clamp(
+          node.resilience -
+          pressure*.25,
+          0,
+          100
+        );
+
+    }
+  );
+
+
+  logEvent(
+    "NIM",
+    "Node vulnerability and resilience reassessed."
+  );
+
+}
+
+
+/* =========================================================
+   EEA
+   ========================================================= */
+
+function runEEA(){
+
+  const fear =
+    random(.15,.65);
+
+  const conflict =
+    random(.12,.55);
+
+  const isolation =
+    random(.10,.48);
+
+  const recursion =
+    random(.08,.40);
+
+
+  document.getElementById(
+    "fearFactor"
+  ).textContent =
+    fear.toFixed(2);
+
+
+  document.getElementById(
+    "conflictFactor"
+  ).textContent =
+    conflict.toFixed(2);
+
+
+  document.getElementById(
+    "isolationFactor"
+  ).textContent =
+    isolation.toFixed(2);
+
+
+  document.getElementById(
+    "recursionFactor"
+  ).textContent =
+    recursion.toFixed(2);
+
+
+  logEvent(
+    "EEA",
+    "Reinforcement relationships recalculated."
+  );
+
+}
+
+
+/* =========================================================
+   PPM
+   ========================================================= */
+
+function runPPM(){
+
+  const paths =
+    randomInt(
+      3,
+      14
+    );
+
+
+  logEvent(
+    "PPM",
+    paths +
+    " candidate pathways generated."
+  );
+
+
+  return paths;
+
+}
+
+
+/* =========================================================
+   ISG
+   ========================================================= */
+
+function generateStrategies(){
+
+  const count =
+    randomInt(
+      4,
+      12
+    );
+
+
+  logEvent(
+    "ISG",
+    count +
+    " protective strategies generated."
+  );
+
+
+  return count;
+
+}
+
+
+/* =========================================================
+   PROTECTION
+   ========================================================= */
+
+function activateProtection(){
+
+  CORE.protection =
+    "ARMED";
+
+
+  CORE.resilience =
+    clamp(
+      CORE.resilience + 2,
+      0,
+      99
+    );
+
+
+  CORE.interventions.unshift({
+
+    id:uid("INT"),
+
+    timestamp:Date.now(),
+
+    type:"DIGITAL_PROTECTIVE_STATE",
+
+    status:"ACTIVE",
+
+    outcome:
+      "Application protective state maintained."
+
+  });
+
+
+  logEvent(
+    "PROTECT",
+    "Digital protective state activated."
+  );
+
+
+  updateTop();
+
+  saveState();
+
+  toast(
+    "Protective state activated."
+  );
+
+}
+
+
+/* =========================================================
+   FULL CYCLE
+   ========================================================= */
+
+function runFullCycle(){
+
+  const observation =
+    sense();
+
+
+  logEvent(
+    "SENSE",
+    "Observation package received."
+  );
+
+
+  const vector =
+    translate(
+      observation
+    );
+
+
+  logEvent(
+    "TRANSLATE",
+    "Observation translated into state vector."
+  );
+
+
+  runNIM();
+
+  runEEA();
+
+  runPPM();
+
+  generateStrategies();
+
+
+  logEvent(
+    "REPROGRAM",
+    "Protective graph simulation prepared."
+  );
+
+
+  runSimulation(
+    500
+  );
+
+
+  activateProtection();
+
+
+  CORE.memory.unshift(
+
+    "Cycle " +
+    new Date()
+      .toLocaleTimeString() +
+    " completed: " +
+    JSON.stringify(
+      vector
+    )
+
+  );
+
+
+  if(
+    CORE.memory.length >
+    100
+  ){
+
+    CORE.memory =
+      CORE.memory.slice(
+        0,
+        100
+      );
+
+  }
+
+
+  document.getElementById(
+    "cycleStatus"
+  ).textContent =
+    "Cycle complete: observe → analyse → simulate → protect → verify → learn.";
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+/* =========================================================
+   SIMULATION ENGINE
+   ========================================================= */
+
+function runSimulation(
+  requestedTrials=1000
+){
+
+  const trials =
+    clamp(
+      Number(
+        requestedTrials
+      ) || 1000,
+      100,
+      100000
+    );
+
+
+  const selectedId =
+    document.getElementById(
+      "simulationStrategy"
+    )?.value;
+
+
+  const strategy =
+    CORE.strategies.find(
+      s =>
+        s.id ===
+        selectedId
+    ) ||
+    CORE.strategies[
+      randomInt(
+        0,
+        CORE.strategies.length-1
+      )
+    ];
+
+
+  let propagation = 0;
+
+  let resilienceGain = 0;
+
+  let loopBreak = 0;
+
+  let uncertainty = 0;
+
+
+  for(
+    let i=0;
+    i<Math.min(
+      trials,
+      10000
+    );
+    i++
+  ){
+
+    const v =
+      random(0,1);
+
+
+    propagation +=
+      v *
+      (
+        strategy.name ===
+        "DAMP"
+          ? .55
+          : 1
+      );
+
+
+    resilienceGain +=
+      random(
+        .05,
+        .35
+      ) *
+      (
+        strategy.name ===
+        "REINFORCE"
+          ? 1.35
+          : 1
+      );
+
+
+    loopBreak +=
+      random(
+        .2,
+        .95
+      ) *
+      (
+        strategy.name ===
+        "LOOP-INVERT"
+          ? 1.3
+          : 1
+      );
+
+
+    uncertainty +=
+      random(
+        .05,
+        .22
+      );
+
+  }
+
+
+  const divisor =
+    Math.min(
+      trials,
+      10000
+    );
+
+
+  propagation /=
+    divisor;
+
+
+  resilienceGain /=
+    divisor;
+
+
+  loopBreak /=
+    divisor;
+
+
+  uncertainty /=
+    divisor;
+
+
+  const result = {
+
+    id:uid("EXP"),
+
+    timestamp:Date.now(),
+
+    strategy:
+      strategy.name,
+
+    trials,
+
+    propagation:
+      propagation.toFixed(3),
+
+    resilienceGain:
+      Number(
+        resilienceGain
+      ).toFixed(3),
+
+    loopBreak:
+      Number(
+        loopBreak
+      ).toFixed(3),
+
+    uncertainty:
+      Number(
+        uncertainty
+      ).toFixed(3),
+
+    risk:0,
+
+    humanHarm:0
+
+  };
+
+
+  CORE.experiments.unshift(
+    result
+  );
+
+
+  CORE.resilience =
+    clamp(
+      CORE.resilience +
+      resilienceGain,
+      0,
+      99
+    );
+
+
+  CORE.coherence =
+    clamp(
+      CORE.coherence +
+      random(
+        -.2,
+        .5
+      ),
+      0,
+      99
+    );
+
+
+  strategy.score =
+    clamp(
+      strategy.score +
+      resilienceGain*.05 +
+      loopBreak*.02,
+      .01,
+      .99
+    );
+
+
+  document.getElementById(
+    "simulationResult"
+  ).innerHTML = `
+
+    <strong>
+      ${result.id}
+    </strong>
+
+    <br>
+
+    Strategy:
+    ${escapeHTML(
+      result.strategy
+    )}
+
+    <br>
+
+    Trials:
+    ${trials.toLocaleString()}
+
+    <br>
+
+    Resilience gain:
+    ${result.resilienceGain}
+
+    <br>
+
+    Loop break:
+    ${result.loopBreak}
+
+    <br>
+
+    Real-world harm:
+    <strong class="good">
+      0
+    </strong>
+
+  `;
+
+
+  document.getElementById(
+    "simPropagation"
+  ).textContent =
+    result.propagation;
+
+
+  document.getElementById(
+    "simResilience"
+  ).textContent =
+    result.resilienceGain +
+    "%";
+
+
+  document.getElementById(
+    "simLoop"
+  ).textContent =
+    result.loopBreak +
+    "%";
+
+
+  document.getElementById(
+    "simUncertainty"
+  ).textContent =
+    result.uncertainty;
+
+
+  document.getElementById(
+    "simConfidence"
+  ).textContent =
+    (
+      1 -
+      Number(
+        result.uncertainty
+      )
+    ).toFixed(3);
+
+
+  document.getElementById(
+    "simCount"
+  ).textContent =
+    trials.toLocaleString();
+
+
+  logEvent(
+    "SIM",
+    trials.toLocaleString() +
+    " synthetic trials completed using " +
+    strategy.name
+  );
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+/* =========================================================
+   PIONEER ENGINE
+   ========================================================= */
+
+function generatePioneerHypothesis(){
+
+  const a =
+    CORE.strategies[
+      randomInt(
+        0,
+        CORE.strategies.length-1
+      )
+    ];
+
+
+  const b =
+    CORE.strategies[
+      randomInt(
+        0,
+        CORE.strategies.length-1
+      )
+    ];
+
+
+  const vulnerabilities = [
+
+    "loop density",
+    "uncertainty",
+    "network exposure",
+    "reinforcement pressure",
+    "connectivity instability",
+    "weak resilience",
+    "high activity"
+
+  ];
+
+
+  const vulnerability =
+    vulnerabilities[
+      randomInt(
+        0,
+        vulnerabilities.length-1
+      )
+    ];
+
+
+  const prefixes = [
+
+    "Adaptive",
+    "Distributed",
+    "Recursive",
+    "Layered",
+    "Resonant",
+    "Dynamic",
+    "Multi-Vector",
+    "Quantum-Inspired"
+
+  ];
+
+
+  const suffixes = [
+
+    "Resilience Mesh",
+    "Loop Stabilisation",
+    "Protective Lattice",
+    "Cloak Matrix",
+    "Choke Network",
+    "Defence Field",
+    "Adaptive Shield",
+    "Integrity Mesh"
+
+  ];
+
+
+  const name =
+    prefixes[
+      randomInt(
+        0,
+        prefixes.length-1
+      )
+    ] +
+    " " +
+    suffixes[
+      randomInt(
+        0,
+        suffixes.length-1
+      )
+    ] +
+    " v" +
+    randomInt(2,9);
+
+
+  const hypothesis = {
+
+    id:uid("PION"),
+
+    name,
+
+    genome:[
+      a.name,
+      b.name,
+      "REINFORCE"
+    ],
+
+    target:
+      vulnerability,
+
+    statement:
+
+      `Combine ${a.name} +
+       ${b.name} against
+       ${vulnerability}.
+       Test whether resilience
+       increases while simulated
+       collateral risk remains zero.`,
+
+    timestamp:Date.now(),
+
+    status:"GENERATED",
+
+    score:null
+
+  };
+
+
+  CORE.pioneerLibrary.unshift(
+    hypothesis
+  );
+
+
+  document.getElementById(
+    "pioneerResult"
+  ).innerHTML = `
+
+    <strong>
+      ${escapeHTML(
+        hypothesis.name
+      )}
+    </strong>
+
+    <br><br>
+
+    ${escapeHTML(
+      hypothesis.statement
+    )}
+
+    <br><br>
+
+    Genome:
+    ${hypothesis.genome.join(
+      " + "
+    )}
+
+    <br>
+
+    Experiment:
+    ${hypothesis.id}
+
+  `;
+
+
+  logEvent(
+    "PIONEER",
+    "New strategy hypothesis generated: " +
+    hypothesis.name
+  );
+
+
+  CORE.memory.unshift(
+    "Pioneer hypothesis: " +
+    hypothesis.name
+  );
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+function mutateStrategy(){
+
+  const source =
+    CORE.strategies[
+      randomInt(
+        0,
+        CORE.strategies.length-1
+      )
+    ];
+
+
+  const mutations = [
+
+    "DAMP",
+    "DECOUPLE",
+    "LOOP-INVERT",
+    "REINFORCE",
+    "VALUE-SUBSTITUTE"
+
+  ];
+
+
+  const mutation =
+    mutations[
+      randomInt(
+        0,
+        mutations.length-1
+      )
+    ];
+
+
+  const candidate = {
+
+    id:uid("MUT"),
+
+    name:
+      "Mutation · " +
+      source.name +
+      " → " +
+      mutation,
+
+    genome:[
+      source.name,
+      mutation
+    ],
+
+    target:"adaptive",
+
+    statement:
+      "Synthetic strategy mutation queued for testing.",
+
+    timestamp:Date.now(),
+
+    status:"QUEUED",
+
+    score:null
+
+  };
+
+
+  CORE.pioneerLibrary.unshift(
+    candidate
+  );
+
+
+  logEvent(
+    "PIONEER",
+    "Strategy mutation queued."
+  );
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+/* =========================================================
+   PROPHETIC INPUT
+   ========================================================= */
+
+function storePropheticInput(){
+
+  const text =
+    document
+      .getElementById(
+        "propheticText"
+      )
+      .value
+      .trim();
+
+
+  if(!text){
+
+    toast(
+      "Enter a prophetic or spiritual input."
+    );
+
+    return;
+
+  }
+
+
+  const source =
+    document
+      .getElementById(
+        "propheticSource"
+      )
+      .value
+      .trim() ||
+    "Human input";
+
+
+  const confidence =
+    Number(
+      document
+        .getElementById(
+          "propheticConfidence"
+        )
+        .value
+    );
+
+
+  CORE.propheticInputs.unshift({
+
+    id:uid("PROP"),
+
+    timestamp:Date.now(),
+
+    text,
+
+    source,
+
+    confidence
+
+  });
+
+
+  document
+    .getElementById(
+      "propheticText"
+    )
+    .value = "";
+
+
+  logEvent(
+    "PROPHECY",
+    "Human spiritual input stored with provenance."
+  );
+
+
+  renderAll();
+
+  saveState();
+
+}
+
+
+/* =========================================================
+   AUDIT
+   ========================================================= */
+
+function renderAudit(){
+
+  const feed =
+    document.getElementById(
+      "auditFeed"
+    );
+
+
+  if(!feed)
+    return;
+
+
+  feed.innerHTML =
+    CORE.audit
+      .slice()
+      .reverse()
+      .slice(
+        0,
+        150
+      )
+      .map(
+        entry =>
+
+          `<div class="feed-line">
+
+            <span class="feed-time">
+              ${new Date(
+                entry.timestamp
+              ).toLocaleTimeString()}
+            </span>
+
+            <span class="feed-type">
+              ${escapeHTML(
+                entry.type
+              )}
+            </span>
+
+            <br>
+
+            <span class="feed-message">
+              ${escapeHTML(
+                entry.message
+              )}
+            </span>
+
+            <br>
+
+            <span class="muted">
+              ${entry.hash.slice(
+                0,
+                32
+              )}…
+            </span>
+
+          </div>`
+
+      )
+      .join("");
+
+}
+
+
+async function verifyAuditChain(){
+
+  let previous =
+    "GENESIS";
+
+
+  let valid =
+    true;
+
+
+  for(
+    const entry of
+    CORE.audit
+  ){
+
+    if(
+      entry.previous !==
+      previous
+    ){
+
+      valid =
+        false;
+
+      break;
+
+    }
+
+
+    previous =
+      entry.hash;
+
+  }
+
+
+  toast(
+    valid
+      ? "Audit chain linkage valid."
+      : "Audit chain mismatch detected."
+  );
+
+
+  if(valid){
+
+    logEvent(
+      "AUDIT",
+      "Hash-chain verification successful."
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+function renderSimulationTable(){
+
+  const body =
+    document.getElementById(
+      "simulationTable"
+    );
+
+
+  if(!body)
+    return;
+
+
+  body.innerHTML =
+    CORE.experiments
+      .slice(
+        0,
+        80
+      )
+      .map(
+        experiment =>
+
+          `<tr>
+
+            <td>
+              ${experiment.id}
+            </td>
+
+            <td>
+              ${escapeHTML(
+                experiment.strategy
+              )}
+            </td>
+
+            <td>
+              ${experiment.trials.toLocaleString()}
+            </td>
+
+            <td>
+              ${experiment.resilienceGain}
+            </td>
+
+            <td>
+              ${experiment.loopBreak}
+            </td>
+
+            <td class="good">
+              ${experiment.risk}
+            </td>
+
+          </tr>`
+
+      )
+      .join("");
+
+}
+
+
+function renderNodeTable(){
+
+  const body =
+    document.getElementById(
+      "nodeTable"
+    );
+
+
+  if(!body)
+    return;
+
+
+  body.innerHTML =
+    CORE.nodes
+      .slice(
+        0,
+        80
+      )
+      .map(
+        node =>
+
+          `<tr
+            onclick='inspectNode(
+              ${JSON.stringify(node)}
+            )'
+            style="cursor:pointer">
+
+            <td>
+              ${node.id}
+            </td>
+
+            <td>
+              ${node.type}
+            </td>
+
+            <td>
+              ${node.vulnerability}%
+            </td>
+
+            <td class="good">
+              ${node.resilience}%
+            </td>
+
+            <td>
+              ${node.activity}%
+            </td>
+
+            <td>
+              ${node.uncertainty}%
+            </td>
+
+          </tr>`
+
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   PIONEER LIBRARY
+   ========================================================= */
+
+function renderPioneerLibrary(){
+
+  const container =
+    document.getElementById(
+      "pioneerLibrary"
+    );
+
+
+  if(!container)
+    return;
+
+
+  if(
+    !CORE.pioneerLibrary.length
+  ){
+
+    container.innerHTML =
+      `<div class="notice">
+        No generated hypotheses yet.
+      </div>`;
+
+    return;
+
+  }
+
+
+  container.innerHTML = `
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>HYPOTHESIS</th>
+          <th>GENOME</th>
+          <th>STATUS</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        ${
+          CORE.pioneerLibrary
+            .map(
+              item => `
+
+                <tr>
+
+                  <td>
+                    ${item.id}
+                  </td>
+
+                  <td>
+                    <strong>
+                      ${escapeHTML(
+                        item.name
+                      )}
+                    </strong>
+
+                    <br>
+
+                    <span class="muted">
+                      ${escapeHTML(
+                        item.statement
+                      )}
+                    </span>
+
+                  </td>
+
+                  <td>
+                    ${(
+                      item.genome ||
+                      []
+                    ).join(
+                      " + "
+                    )}
+                  </td>
+
+                  <td>
+                    <span class="badge violet">
+                      ${item.status}
+                    </span>
+                  </td>
+
+                </tr>
+
+              `
+            )
+            .join("")
+        }
+
+      </tbody>
+
+    </table>`;
+
+}
+
+
+/* =========================================================
+   PROPHETIC LEDGER
+   ========================================================= */
+
+function renderPropheticLedger(){
+
+  const feed =
+    document.getElementById(
+      "propheticLedger"
+    );
+
+
+  if(!feed)
+    return;
+
+
+  feed.innerHTML =
+    CORE.propheticInputs
+      .slice(
+        0,
+        80
+      )
+      .map(
+        item =>
+
+          `<div class="feed-line">
+
+            <strong>
+              ${escapeHTML(
+                item.source
+              )}
+            </strong>
+
+            <span class="badge gold">
+              ${item.confidence}
+            </span>
+
+            <br>
+
+            ${escapeHTML(
+              item.text
+            )}
+
+            <br>
+
+            <span class="muted">
+              ${new Date(
+                item.timestamp
+              ).toLocaleString()}
+            </span>
+
+          </div>`
+
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   MEMORY
+   ========================================================= */
+
+function renderMemory(){
+
+  const feed =
+    document.getElementById(
+      "modelMemory"
+    );
+
+
+  if(!feed)
+    return;
+
+
+  feed.innerHTML =
+    CORE.memory
+      .slice(
+        0,
+        100
+      )
+      .map(
+        item =>
+          `<div class="feed-line">
+            ${escapeHTML(item)}
+          </div>`
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   HISTORY
+   ========================================================= */
+
+function renderHistory(){
+
+  const container =
+    document.getElementById(
+      "interventionHistory"
+    );
+
+
+  if(!container)
+    return;
+
+
+  container.innerHTML = `
+
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>TIME</th>
+          <th>TYPE</th>
+          <th>STATUS</th>
+          <th>OUTCOME</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        ${
+          CORE.interventions
+            .map(
+              intervention => `
+
+                <tr>
+
+                  <td>
+                    ${intervention.id}
+                  </td>
+
+                  <td>
+                    ${new Date(
+                      intervention.timestamp
+                    ).toLocaleString()}
+                  </td>
+
+                  <td>
+                    ${escapeHTML(
+                      intervention.type
+                    )}
+                  </td>
+
+                  <td>
+                    <span class="badge green">
+                      ${intervention.status}
+                    </span>
+                  </td>
+
+                  <td>
+                    ${escapeHTML(
+                      intervention.outcome
+                    )}
+                  </td>
+
+                </tr>
+
+              `
+            )
+            .join("")
+        }
+
+      </tbody>
+
+    </table>`;
+
+}
+
+
+/* =========================================================
+   GENOME MATRIX
+   ========================================================= */
+
+function renderGenome(){
+
+  const matrix =
+    document.getElementById(
+      "genomeMatrix"
+    );
+
+
+  if(!matrix)
+    return;
+
+
+  matrix.innerHTML =
+    CORE.strategies
+      .map(
+        strategy => `
+
+          <div class="matrix-item">
+
+            <small>
+              GENOME
+            </small>
+
+            <b>
+              ${escapeHTML(
+                strategy.name
+              )}
+            </b>
+
+            <small
+              style="margin-top:5px">
+
+              fitness:
+              ${Math.round(
+                strategy.score*100
+              )}%
+
+            </small>
+
+          </div>
+
+        `
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   WATCHDOG
+   ========================================================= */
+
+function renderWatchdog(){
+
+  const matrix =
+    document.getElementById(
+      "watchdogMatrix"
+    );
+
+
+  if(!matrix)
+    return;
+
+
+  const checks = [
+
+    [
+      "CORE",
+      "HEALTHY"
+    ],
+
+    [
+      "STORAGE",
+      "LOCAL"
+    ],
+
+    [
+      "AUDIT",
+      "HASH-LINKED"
+    ],
+
+    [
+      "GRAPH",
+      "RESPONSIVE"
+    ],
+
+    [
+      "SIMULATION",
+      "READY"
+    ],
+
+    [
+      "NETWORK",
+      navigator.onLine
+        ? "ONLINE"
+        : "OFFLINE"
+    ],
+
+    [
+      "CONFIG",
+      "VALID"
+    ],
+
+    [
+      "PROTECTION",
+      CORE.protection
+    ]
+
+  ];
+
+
+  matrix.innerHTML =
+    checks
+      .map(
+        check => `
+
+          <div class="matrix-item">
+
+            <small>
+              ${check[0]}
+            </small>
+
+            <b class="good">
+              ${check[1]}
+            </b>
+
+          </div>
+
+        `
+      )
+      .join("");
+
+}
+
+
+/* =========================================================
+   TOP TELEMETRY
+   ========================================================= */
+
+function updateTop(){
+
+  document.getElementById(
+    "topProtection"
+  ).textContent =
+    CORE.protection;
+
+
+  document.getElementById(
+    "topResilience"
+  ).textContent =
+    Math.round(
+      CORE.resilience
+    ) +
+    "%";
+
+
+  document.getElementById(
+    "topCoherence"
+  ).textContent =
+    Math.round(
+      CORE.coherence
+    ) +
+    "%";
+
+
+  document.getElementById(
+    "topConnectivity"
+  ).textContent =
+    navigator.onLine
+      ? "ONLINE"
+      : "OFFLINE";
+
+
+  document.getElementById(
+    "kNodes"
+  ).textContent =
+    CORE.nodes.length;
+
+
+  document.getElementById(
+    "kEdges"
+  ).textContent =
+    CORE.edges.length;
+
+
+  document.getElementById(
+    "kExperiments"
+  ).textContent =
+    CORE.experiments.length;
+
+
+  document.getElementById(
+    "kProtected"
+  ).textContent =
+    CORE.protectedNodes.length;
+
+
+  document.getElementById(
+    "kDefence"
+  ).textContent =
+    "+" +
+    Math.round(
+      Math.max(
+        0,
+        CORE.resilience-55
+      )
+    ) +
+    "%";
+
+
+  document.getElementById(
+    "kUncertainty"
+  ).textContent =
+    Math.round(
+      100 -
+      CORE.coherence
+    ) +
+    "%";
+
+}
+
+
+/* =========================================================
+   CONFIGURATION
+   ========================================================= */
+
+function saveConfiguration(){
+
+  CORE.config.cycleInterval =
+    Math.max(
+      3000,
+      Number(
+        document.getElementById(
+          "cycleInterval"
+        ).value
+      ) || 12000
+    );
+
+
+  CORE.config.mode =
+    document.getElementById(
+      "operatingMode"
+    ).value;
+
+
+  saveState();
+
+  restartAutonomousLoop();
+
+  toast(
+    "Configuration saved."
+  );
+
+}
+
+
+function loadConfiguration(){
+
+  document.getElementById(
+    "cycleInterval"
+  ).value =
+    CORE.config.cycleInterval;
+
+
+  document.getElementById(
+    "operatingMode"
+  ).value =
+    CORE.config.mode;
+
+}
+
+
+/* =========================================================
+   IMPORT / EXPORT
+   ========================================================= */
+
+function exportState(){
+
+  const blob =
+    new Blob(
+      [
+        JSON.stringify(
+          CORE,
+          null,
+          2
+        )
+      ],
+      {
+        type:
+          "application/json"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+
+  link.href =
+    url;
+
+  link.download =
+    "zioncore-sqie-v2-state.json";
+
+
+  link.click();
+
+
+  URL.revokeObjectURL(
+    url
+  );
+
+
+  toast(
+    "SQIE state exported."
+  );
+
+}
+
+
+function importState(){
+
+  const input =
+    document.createElement(
+      "input"
+    );
+
+
+  input.type =
+    "file";
+
+  input.accept =
+    ".json";
+
+
+  input.onchange =
+    () => {
+
+      const file =
+        input.files[0];
+
+
+      if(!file)
+        return;
+
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        () => {
+
+          try{
+
+            const parsed =
+              JSON.parse(
+                reader.result
+              );
+
+
+            Object.assign(
+              CORE,
+              parsed
+            );
+
+
+            saveState();
+
+            renderAll();
+
+            toast(
+              "State imported."
+            );
+
+          }catch{
+
+            toast(
+              "Invalid SQIE JSON."
+            );
+
+          }
+
+        };
+
+
+      reader.readAsText(
+        file
+      );
+
+    };
+
+
+  input.click();
+
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+function resetCore(){
+
+  if(
+    !confirm(
+      "Reset the local ZionCore SQIE model?"
+    )
+  ){
+
+    return;
+
+  }
+
+
+  localStorage.removeItem(
+    STORAGE_KEY
+  );
+
+
+  location.reload();
+
+}
+
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+
+let toastTimer;
+
+
+function toast(
+  message
+){
+
+  const element =
+    document.getElementById(
+      "toast"
+    );
+
+
+  element.textContent =
+    message;
+
+
+  element.classList.add(
+    "show"
+  );
+
+
+  clearTimeout(
+    toastTimer
+  );
+
+
+  toastTimer =
+    setTimeout(
+      () =>
+        element.classList.remove(
+          "show"
+        ),
+      2600
+    );
+
+}
+
+
+/* =========================================================
+   CLOCK / WATCHDOG
+   ========================================================= */
+
+function heartbeat(){
+
+  document.getElementById(
+    "topClock"
+  ).textContent =
+    new Date()
+      .toLocaleTimeString();
+
+
+  renderWatchdog();
+
+  drawGraph(
+    "commandMap"
+  );
+
+}
+
+
+/* =========================================================
+   AUTONOMOUS BROWSER LOOP
+   ========================================================= */
+
+let autonomousTimer = null;
+
+
+function restartAutonomousLoop(){
+
+  if(autonomousTimer){
+
+    clearInterval(
+      autonomousTimer
+    );
+
+  }
+
+
+  autonomousTimer =
+    setInterval(
+      () => {
+
+        if(
+          document.visibilityState !==
+          "visible"
+        ){
+
+          return;
+
+        }
+
+
+        logEvent(
+          "WATCHDOG",
+          "Autonomous browser health sweep."
+        );
+
+
+        runNIM();
+
+        runEEA();
+
+
+        CORE.resilience =
+          clamp(
+            CORE.resilience +
+            random(
+              -.15,
+              .35
+            ),
+            0,
+            99
+          );
+
+
+        CORE.coherence =
+          clamp(
+            CORE.coherence +
+            random(
+              -.2,
+              .2
+            ),
+            0,
+            99
+          );
+
+
+        updateTop();
+
+        saveState();
+
+      },
+      CORE.config.cycleInterval
+    );
+
+}
+
+
+/* =========================================================
+   RENDER ALL
+   ========================================================= */
+
+function renderAll(){
+
+  updateTop();
+
+  renderProtectionCircle();
+
+  renderSpiritualEntities();
+
+  renderStrategies();
+
+  renderSimulationTable();
+
+  renderNodeTable();
+
+  renderPioneerLibrary();
+
+  renderPropheticLedger();
+
+  renderMemory();
+
+  renderHistory();
+
+  renderAudit();
+
+  renderGenome();
+
+  renderWatchdog();
+
+  drawGraph(
+    "commandMap"
+  );
+
+  drawGraph(
+    "networkMap"
+  );
+
+  loadConfiguration();
+
+}
+
+
+/* =========================================================
+   INITIALISATION
+   ========================================================= */
+
+function initialise(){
+
+  loadState();
+
+
+  if(
+    !CORE.nodes ||
+    !CORE.nodes.length
+  ){
+
+    createSeedNetwork();
+
+  }
+
+
+  initialiseStrategies();
+
+
+  renderAll();
+
+
+  logEvent(
+    "BOOT",
+    "ZionCore SQIE v2.0 initialised."
+  );
+
+
+  logEvent(
+    "CORE",
+    "Protective resilience architecture online."
+  );
+
+
+  logEvent(
+    "SCOPE",
+    "Synthetic simulation boundary active."
+  );
+
+
+  restartAutonomousLoop();
+
+}
+
+
+/* =========================================================
+   CLOCK
+   ========================================================= */
+
+setInterval(
+  heartbeat,
+  1000
+);
+
+
+/* =========================================================
+   ONLINE / OFFLINE
+   ========================================================= */
+
+window.addEventListener(
+  "online",
+  () => {
+
+    logEvent(
+      "NETWORK",
+      "Connectivity restored."
+    );
+
+    updateTop();
+
+  }
+);
+
+
+window.addEventListener(
+  "offline",
+  () => {
+
+    logEvent(
+      "NETWORK",
+      "Device currently offline."
+    );
+
+    updateTop();
+
+  }
+);
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+initialise();
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ZIONCORE AEGIS · Command Centre</title>
