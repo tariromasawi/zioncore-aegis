@@ -1,8 +1,11 @@
-/* Extra loader only. Does not replace SQIE / Aegis engines. */
+/* Additional loader. Does not replace existing ZionCore scripts. */
 (function(){
-  if (document.getElementById("zc-rm-loader")) return;
-  var s = document.createElement("script");
-  s.id = "zc-rm-loader";
-  s.src = "js/ritual-matrix.js";
-  document.documentElement.appendChild(s);
+  if (document.getElementById("zc-ritual-frame")) return;
+  var frame = document.createElement("iframe");
+  frame.id = "zc-ritual-frame";
+  frame.title = "Living Protection Matrix";
+  frame.src = "ritual.html";
+  frame.style.cssText = "display:block;width:100%;min-height:1700px;border:0;background:#020405;margin:0";
+  var host = document.querySelector("main") || document.body;
+  host.appendChild(frame);
 })();
