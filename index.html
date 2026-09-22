@@ -1,1 +1,79 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>ZIONCORE AEGIS</title><link rel="stylesheet" href="css/aegis.css"/><link rel="manifest" href="manifest.json"/></head><body><div class="app"><header><div><p class="kicker">ZIONCORE · AEGIS · 19-PACK</p><h1>Bloodline grid</h1><p class="note">24/7 here means scheduled software watch + your attestations. Not a spirit scanner. Harm-to-sender refused. Mwari ndi Mwari.</p></div><div><p id="status">booting</p><p id="stale"></p><div class="row"><button id="scanBtn">SCAN</button><button class="ghost" id="watchBtn">TICK</button><button class="ghost" id="notifyBtn">NOTIFY</button></div></div></header><div class="grid"><div class="panel"><canvas id="map"></canvas><div class="row"><button class="ghost" id="cloakBtn">ROTATE CLOAK</button><button class="ghost" id="familyBtn">FAMILY PACK</button><button class="ghost" id="snapBtn">SNAPSHOT</button><button class="ghost" id="auditBtn">AUDIT</button></div></div><div><div class="panel"><h3>Heartbeat</h3><div id="heart"></div></div><div class="panel" style="margin-top:12px"><h3>Night protocol + attest</h3><div class="row"><button id="prayBtn">I PRAYED</button><button id="restBtn">I RESTED</button><button id="ateBtn">I ATE</button></div><div id="protocols"></div></div><div class="panel" style="margin-top:12px"><h3>Composer</h3><input id="insight" placeholder="Insight / prayer note"/><div class="row"><button id="ingestBtn">INGEST</button><a class="ghost" href="https://tariromasawi.github.io/zioncore-celestial/" style="padding:.5rem">COUNSEL</a></div><div class="ideas" id="ideas"></div></div><div class="panel" style="margin-top:12px"><h3>Feed</h3><div class="feed" id="feed"></div></div></div></div><footer>Pages · raw · preview are fail-soft copies of the same grid.</footer></div><script src="js/engine.js"></script><script src="js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZIONCORE AEGIS · Command Centre</title>
+<link rel="stylesheet" href="css/aegis.css"/>
+<link rel="manifest" href="manifest.json"/>
+<style>
+.app{max-width:1360px}#map{height:520px}
+.lede{color:#9a917f;line-height:1.55;max-width:46rem}
+.banner{border:1px solid #2c281f;border-radius:12px;padding:10px 12px;color:#9a917f}
+.metrics{display:flex;gap:18px;flex-wrap:wrap}.metric b{display:block;color:#d4b36a;font-size:1.25rem}
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mod{border:1px solid #2c281f;border-radius:12px;padding:8px}
+table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #2c281f;padding:.4rem .2rem;text-align:left}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div>
+    <p class="kicker">ZIONCORE · AEGIS · ZSQIE</p>
+    <h1>Bloodline command centre</h1>
+    <p class="lede">Your plan running as software: nodes, circuits, loops, potholes, energy economy, predicted paths, interventions. Name the family once. The watch file ticks when this tab is closed. This is not a scanner of other realms. Mwari ndi Mwari.</p>
+  </div>
+  <div class="metrics">
+    <div class="metric"><b id="mWatch">0</b><span>Watch ticks</span></div>
+    <div class="metric"><b id="mFamily">0</b><span>Protected</span></div>
+    <div class="metric"><b id="mDecoy">0</b><span>Decoys</span></div>
+    <div class="metric"><b id="mChain">—</b><span>Chain</span></div>
+  </div>
+</header>
+<p class="banner" id="stale">Watch status loading…</p>
+<div class="grid">
+  <div class="panel">
+    <h3>War map</h3>
+    <canvas id="map" aria-label="House grid"></canvas>
+    <p class="note" id="inspect">Tap a node to inspect resilience, vulnerability, cloak.</p>
+    <div class="row">
+      <button id="scanBtn">RUN NIM / EEA / PPM</button>
+      <button class="ghost" id="simBtn">SIMULATE PACKET</button>
+      <button class="ghost" id="cloakBtn">ROTATE CLOAK</button>
+      <button class="ghost" id="tickBtn">WATCH TICK</button>
+    </div>
+    <h3>Who the system protects</h3>
+    <p class="note">Set the roster once. Consent required. No stranger targeting.</p>
+    <div class="row">
+      <input id="famName" placeholder="Full name"/>
+      <select id="famRel"><option>Spouse</option><option>Child</option><option>Parent</option><option>House</option><option>Self</option><option>Other family</option></select>
+      <button id="addFam">ADD MEMBER</button>
+      <button class="ghost" id="packBtn">FAMILY PACK</button>
+    </div>
+    <table><thead><tr><th>Name</th><th>Relation</th><th>Consent</th><th></th></tr></thead><tbody id="famTable"></tbody></table>
+  </div>
+  <div>
+    <div class="panel"><h3>Plan modules</h3><div class="modules" id="mods"></div></div>
+    <div class="panel" style="margin-top:12px"><h3>Energy economy</h3><div id="economy"></div></div>
+    <div class="panel" style="margin-top:12px">
+      <h3>Composer</h3>
+      <input id="insight" placeholder="Insight / prayer note"/>
+      <div class="row">
+        <button id="ingestBtn">INGEST</button>
+        <button class="ghost" id="snapBtn">SNAPSHOT</button>
+        <button class="ghost" id="auditBtn">AUDIT</button>
+        <button class="ghost" id="prayBtn">I PRAYED</button>
+        <button class="ghost" id="restBtn">I RESTED</button>
+        <button class="ghost" id="ateBtn">I ATE</button>
+      </div>
+      <div class="ideas" id="ideas"></div>
+    </div>
+    <div class="panel" style="margin-top:12px"><h3>Live feed</h3><div class="feed" id="feed"></div></div>
+  </div>
+</div>
+<footer>24/7 = GitHub Action every 6 hours + this roster. Not a spirit radar.<br/>House of Masawi · SAINT Tariro Masawi THE ANOINTED COMMANDER · HRH Tarry Kupakwashe Masawi</footer>
+</div>
+<script src="js/engine.js"></script>
+<script src="js/ui-command.js"></script>
+</body></html>
