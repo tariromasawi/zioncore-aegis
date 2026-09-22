@@ -1,0 +1,29 @@
+name: Aegis watch
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 - << 'PY'
+          import json, datetime
+          path = "data/aegis-state.json"
+          try:
+            s = json.load(open(path))
+          except Exception:
+            s = {"watch": {"ticks": 0, "decoys": 0}}
+          w = s.setdefault("watch", {})
+          w["ticks"] = int(w.get("ticks") or 0) + 1
+          w["decoys"] = int(w.get("decoys") or 0) + 1
+          w["lastTick"] = datetime.datetime.utcnow().isoformat() + "Z"
+          open(path, "w").write(json.dumps(s, indent=2))
+          PY
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Aegis scheduled watch tick"
